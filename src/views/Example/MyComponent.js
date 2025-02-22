@@ -3,7 +3,7 @@ import React from "react";
 class MyComponent extends React.Component {
   //key:value
   state = {
-    name: "Ronaldo",
+    name: "",
     channel: "Hoi Dan IT",
   };
 
@@ -13,15 +13,16 @@ class MyComponent extends React.Component {
     */
 
   handleOnChangeName = (event) => {
+    //merge
     this.setState({
       name: event.target.value,
     });
   };
   handleClickButton = () => {
-    console.log("hit the button");
     alert("Click me");
   };
   render() {
+    console.log(">>> call render: ", this.state);
     return (
       <>
         <div className="first">
