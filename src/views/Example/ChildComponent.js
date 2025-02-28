@@ -21,7 +21,7 @@ class ChildComponent extends React.Component {
           <div>
             <button onClick={() => this.handleShowHide()}>Show</button>
           </div>
-        :
+          :
           <>
           <div className="job-lists">
             {
