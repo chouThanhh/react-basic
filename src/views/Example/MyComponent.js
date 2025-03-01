@@ -26,6 +26,13 @@ class MyComponent extends React.Component {
       arrJobs: currenJobs
     })
   }
+
+  componentDidUpdate(prevProps, prevState){
+    console.log('>> run didupdate: ', 'prev state: ', prevState, ' current state: ', this.state)
+  }
+  componentDidMount(){
+    console.log('>>> run component did mount')
+  }
   /*
     JSX => return block
     fragment
