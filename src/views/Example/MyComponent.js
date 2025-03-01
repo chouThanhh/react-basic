@@ -18,6 +18,14 @@ class MyComponent extends React.Component {
       arrJobs: [...this.state.arrJobs, job],
     });
   };
+
+  deleteAJob = (job) => {
+    let currenJobs = this.state.arrJobs;
+    currenJobs = currenJobs.filter(item => item.id !== job.id)
+    this.setState({
+      arrJobs: currenJobs
+    })
+  }
   /*
     JSX => return block
     fragment
@@ -30,10 +38,14 @@ class MyComponent extends React.Component {
       <>
         <AddComponent addNewJob={this.addNewJob} />
 
-        <ChildComponent arrJobs={this.state.arrJobs} />
+        <ChildComponent 
+          arrJobs={this.state.arrJobs} 
+          deleteAJob={this.deleteAJob}  
+        />
       </>
     );
   }
+
 }
 
 export default MyComponent;
